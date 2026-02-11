@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Age of Chesspires Wiki" />
+  <title>Age of Chesspires Wiki</title>
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button class="iconbtn" id="btnSidebar" aria-label="Toggle sidebar"></button>
+
+    <a class="brand" href="#/welcome">
+      <div class="brand__text">
+        <div class="brand__title">Age of Chesspires</div>
+        <div class="brand__subtitle">Official Wiki</div>
+      </div>
+    </a>
+
+    <div class="topbar__spacer"></div>
+
+    <div class="search">
+      <input id="searchInput" type="search" placeholder="Search pages (titles/tags)..." autocomplete="off" />
+      <div id="searchResults" class="search__results" hidden></div>
+    </div>
+
+    <button class="iconbtn" id="btnTheme" aria-label="Toggle theme">◐</button>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <nav id="nav" class="nav" aria-label="Wiki navigation"></nav>
+      <div class="sidebar__footer">
+        <div class="muted">Static wiki • Add pages in <code>content/</code></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="crumbs" id="crumbs"></div>
+
+      <div class="contentwrap">
+        <article id="content" class="content" aria-live="polite"></article>
+
+        <aside class="toc" id="tocWrap" aria-label="On this page">
+          <div class="toc__title">On this page</div>
+          <div id="toc" class="toc__list"></div>
+        </aside>
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="js/nav.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
