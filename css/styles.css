@@ -18,6 +18,13 @@
   --h6: #7f8792; /* dimmest */
   --bold: #ffffff;
 
+  --boardCell: 52px;
+  --boardGap: 0px;
+
+  --boardLight: color-mix(in srgb, var(--panel2) 0%, #d8d8d8);
+  --boardDark:  color-mix(in srgb, var(--panel2) 0%, #202020);
+
+
   --sidebarW: 290px;
   --tocW: 5px;
   --radius: 5px;
@@ -45,6 +52,9 @@ html[data-theme="light"]{
   --h5: #54493d; /* darker muted */
   --h6: #3b322a; /* darkest muted */
   --bold: #110d09;
+
+  --boardLight: color-mix(in srgb, var(--panel2) 0%, #f2e6cf);
+  --boardDark:  color-mix(in srgb, var(--panel2) 0%, #6b5f51);
 }
 
 *{ box-sizing: border-box; }
@@ -478,22 +488,6 @@ code, pre{ font-family: var(--mono); }
 }
 
 
-/* ===== Board diagram (markdown ```board blocks) ===== */
-:root{
-  --boardCell: 52px;
-  --boardGap: 2px;
-
-  --boardLight: color-mix(in srgb, var(--panel2) 0%, #d8d8d8);
-  --boardDark:  color-mix(in srgb, var(--panel2) 0%, #202020);
-
-  /* Optional highlight colors (match/adjust to your palette) */
-  --boardCyan:   color-mix(in srgb, #00bfff 25%, var(--panel2));
-  --boardGreen:  color-mix(in srgb, #00ff6b 20%, var(--panel2));
-  --boardRed:    color-mix(in srgb, #ff6455 20%, var(--panel2));
-  --boardOrange: color-mix(in srgb, #ff9e30 22%, var(--panel2));
-  --boardYellow: color-mix(in srgb, #fff43a 22%, var(--panel2));
-  --boardPink:   color-mix(in srgb, #ff85e6 18%, var(--panel2));
-}
 
 .aoc-board{
   display:inline-grid;
