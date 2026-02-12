@@ -257,7 +257,7 @@ function applyHeadingPaddingToBlocks() {
     }
 
     // Other common blocks: follow paragraph behavior (heading + 1em)
-    if (tag === "PRE" || tag === "BLOCKQUOTE" || el.classList?.contains("aoc-board")) {
+    if (tag === "PRE" || tag === "BLOCKQUOTE" ) {
       el.style.paddingLeft = `calc(${curPad} + 1em)`;
       continue;
     }

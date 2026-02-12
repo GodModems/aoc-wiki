@@ -36,8 +36,8 @@ html[data-theme="light"]{
   --accent: #9c7422;
   --accent2: #251c13;
   --shadow: 0 10px 30px rgba(0,0,0,.13);
-  --refLink: #463300;
-  --refLinkHover: #0a0603;
+  --refLink: #e60707;
+  --refLinkHover: #830606;
   --h1: #251c13; /* ink */
   --h2: #8f691d; /* border gold */
   --h3: #9c7422; /* accent gold */
@@ -498,7 +498,7 @@ code, pre{ font-family: var(--mono); }
 .aoc-board{
   display:inline-grid;
   gap: var(--boardGap);
-  margin: 3em 10% 1em;
+  margin: 3em 15% 1em;
   border-radius: 3px;
   background: var(--panel2);
   border: 5px solid var(--border);
