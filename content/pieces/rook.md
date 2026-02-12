@@ -4,7 +4,7 @@
 
 The Rook is classified as a [major piece](#/pieces/index#major) with the following properties:
 
-- **Moves:** any number of squares horizontally or vertically.
+- **Moves:** any number of squares orthogonally.
 - **Captures:** by landing on the target square.
 - **Jumping:** cannot jump over [pieces](#/pieces/index).
 
@@ -12,9 +12,9 @@ The Rook is classified as a [major piece](#/pieces/index#major) with the followi
 ---
 
 ## Research Modifiers
-**[Momentum](#/research/momentum):** rooks can teleport to any square its partner can move to if they are on the same rank or file. 
-**[Murder Holes](#/research/murder-holes):** rooks gain diagonal movement. 
-**[Pyrrhic Victory](#/research/pyrrhic-victory):** if a rook survives to the 50-move mark, its side instantly wins the game. 
+**[Momentum](#/research/momentum):** Rooks can teleport to any square its partner can move to if they are on the same rank or file. 
+**[Murder Holes](#/research/murder-holes):** Rooks gain diagonal movement. 
+**[Pyrrhic Victory](#/research/pyrrhic-victory):** If a rook survives to the 50-move mark, its side instantly wins the game. 
 
 <br>
 ---

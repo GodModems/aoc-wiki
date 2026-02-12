@@ -8,8 +8,7 @@ The Burgundians draw from the late medieval Duchy of Burgundy, a wealthy and pol
 
 ## Rules
 Upon reaching the **6th** or **7th** (for black: **3rd** or **2nd**) rank, your [pawns](#/pieces/pawn) **may** be promoted into a [knight](#/pieces/knight).
-Your [Knights](#/pieces/knight) gain 1 square of movement in the:
-- left, right, forward, and backward.
+Your [Knights](#/pieces/knight) gain 1 square of movement in the orthoganal directions.
 
 <br>
 ---

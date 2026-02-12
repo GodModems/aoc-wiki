@@ -215,6 +215,56 @@ function hrefToWikiPath(href) {
   return path || null;
 }
 
+function applyHeadingPaddingToBlocks() {
+  const kids = Array.from(elContent.children);
+  let curPad = "0px";
+
+  for (const el of kids) {
+    const tag = el.tagName;
+
+    // When we hit a heading, update current padding from CSS
+    if (/^H[1-6]$/.test(tag)) {
+      curPad = getComputedStyle(el).paddingLeft || "0px";
+      continue;
+    }
+
+    // Skip things you never want indented
+    if (tag === "IMG") continue;
+    if (el.hasAttribute && el.hasAttribute("data-noindent")) continue;
+
+    // Apply to paragraphs (and common “text blocks” if desired)
+    const isIndentedBlock =
+      tag === "P" ||
+      tag === "UL" ||
+      tag === "OL" ||
+      tag === "PRE" ||
+      tag === "BLOCKQUOTE" ||
+      el.classList?.contains("aoc-board");
+
+    if (!isIndentedBlock) continue;
+
+        // Paragraphs: heading indent + 1em
+    if (tag === "P") {
+      el.style.paddingLeft = `calc(${curPad} + 1em)`;
+      continue;
+    }
+
+    // Lists: paragraph indent + 1em (=> heading + 2em)
+    if (tag === "UL" || tag === "OL") {
+      el.style.paddingLeft = `calc(${curPad} + 3em)`;
+      el.style.marginLeft = "0";
+      continue;
+    }
+
+    // Other common blocks: follow paragraph behavior (heading + 1em)
+    if (tag === "PRE" || tag === "BLOCKQUOTE" || el.classList?.contains("aoc-board")) {
+      el.style.paddingLeft = `calc(${curPad} + 1em)`;
+      continue;
+    }
+  }
+}
+
+
 function titleForWikiPath(path) {
   const p = PAGES.find(x => x.path === path);
   if (p && p.title) return p.title;
@@ -615,6 +665,7 @@ function titleForWikiPath(path) {
     elContent.innerHTML = html;
 
     enhanceBoardBlocks();
+    applyHeadingPaddingToBlocks();
 
     const title = (elContent.querySelector("h1")?.textContent || page.title).trim();
     document.title = `${title} • Age of Chesspires Wiki`;

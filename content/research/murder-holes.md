@@ -1,11 +1,13 @@
 <!-- content/research/murder-holes.md -->
 # Murder Holes
 
-![Murder Holes Icon](assets/research/icons/murder-holes.svg)
-![Murder Holes Card](assets/research/cards/murder-holes.svg)
-
 ## Effect
-Rooks gain diagonal movement like a queen.
+[Rooks](#/pieces/rook) gain 1 square diagonal movement.
 
-## Related
-- [Research Index](#/research/index)
+<br>
+---
+
+## Card
+
+
+![Murder Holes Card](assets/research/cards/murder-holes.svg)

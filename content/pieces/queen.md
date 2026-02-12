@@ -4,7 +4,7 @@
 
 The Queen is classified as a [major piece](#/pieces/index#major) with the following properties:
 
-- **Moves:** any number of squares orthogonally *or* diagonally.
+- **Moves:** any number of squares orthogonally or diagonally.
 - **Captures:** by landing on the target square.
 - **Jumping:** cannot jump over [pieces](#/pieces/index).
 

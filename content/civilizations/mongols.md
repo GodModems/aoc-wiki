@@ -5,8 +5,7 @@
 ## Rules
 If your [pawns](#/pieces/pawn) capture a [non-minor piece](#/pieces/index#minor), they are promoted to a [Knight](#/pieces/knight).
 All of your [Bishops](#/pieces/bishop) are replaced by [Knights](#/pieces/knight).
-Your [Knights](#/pieces/knight) gain 1 square of movement in the:
-- forward-left, forward-right, back-left, and back-right diagonals.
+Your [Knights](#/pieces/knight) gain 1 square of movement in the diagonal directions.
 
 ---
 

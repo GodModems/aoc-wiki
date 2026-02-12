@@ -1,11 +1,13 @@
 <!-- content/research/dame.md -->
 # Dame
 
-![Dame Icon](assets/research/icons/dame.svg)
-![Dame Card](assets/research/cards/dame.svg)
-
 ## Effect
-Queens gain Knight-style movement.
+[Queens](#/pieces/queen) gain [Knight](#/pieces/knight) movement.
 
-## Related
-- [Research Index](#/research/index)
+<br>
+---
+
+## Card
+
+
+![Dame Card](assets/research/cards/dame.svg)

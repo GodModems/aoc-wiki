@@ -23,11 +23,11 @@ The Knight is classified as a [major piece](#/pieces/index#major) with the follo
 
 ## Civilization Interactions
 **[Burgundians](#/civilizations/burgundians):** 
-- Knight's can also move 1 square left/right/forward/backward.
+- Your knights can also move 1 square orthogonally.
 **[Egyptians](#/civilizations/egyptians):**
 - Your knights are replaced with [bishops](#/pieces/bishop).
 **[French](#/civilizations/french):**
-- When your King dies, buff all other [pieces](#/pieces/index) for 3 turns. Your knight gains [queen](#/pieces/queen) movement during this buff window.
+- When your [King](#/pieces/king) dies, buff all other [pieces](#/pieces/index) for 3 turns. Your knight gains [queen](#/pieces/queen) movement during this buff window.
 **[Huns](#/civilizations/huns):** 
 - Replace all [non-royal pieces](#/pieces/royals) with [horseman](#/pieces/horseman).
 **[Mongols](#/civilizations/mongols):**

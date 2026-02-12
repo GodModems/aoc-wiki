@@ -1,11 +1,13 @@
 <!-- content/research/failed-joust.md -->
 # Failed Joust
 
-![Failed Joust Icon](assets/research/icons/failed-joust.svg)
-![Failed Joust Card](assets/research/cards/failed-joust.svg)
 
 ## Effect
-If a knight ends its move directly in front of an enemy piece, it dies.
+If a [knight](#/pieces/knight) ends its move directly in front of an enemy [piece](#/pieces/index), it dies.
+<br>
+---
 
-## Related
-- [Research Index](#/research/index)
+## Card
+
+
+![Failed Joust Card](assets/research/cards/failed-joust.svg)

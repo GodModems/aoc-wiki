@@ -3,10 +3,9 @@
 <br>  
 
 Use this wiki to quickly look up **rules**, **civilizations**, **pieces**, and **research**.
-
+<br>
 ---
-
-## Explore
+<br>
 
 <div class="home-grids">
 
@@ -59,7 +58,7 @@ Use this wiki to quickly look up **rules**, **civilizations**, **pieces**, and *
       </a>
     </div>
   </section>
-
+  <br>
   <section class="home-block">
     <h2>Pieces</h2>
     <div class="home-grid">
@@ -101,7 +100,7 @@ Use this wiki to quickly look up **rules**, **civilizations**, **pieces**, and *
       </a>
     </div>
   </section>
-
+  <br>
   <section class="home-block">
     <h2>Research</h2>
     <div class="home-grid">

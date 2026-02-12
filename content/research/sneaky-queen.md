@@ -1,11 +1,13 @@
 <!-- content/research/sneaky-queen.md -->
 # Sneaky Queen
 
-![Sneaky Queen Icon](assets/research/icons/sneaky-queen.svg)
-![Sneaky Queen Card](assets/research/cards/sneaky-queen.svg)
-
 ## Effect
-One random pawn becomes a hidden queen, revealing after its first non-pawn move.
+One random [minor piece](#/pieces/index#minor) or [horseman](#/pieces/horseman) becomes a hidden [queen](#/pieces/queen), revealing after its first non-standard move.
 
-## Related
-- [Research Index](#/research/index)
+<br>
+---
+
+## Card
+
+
+![Sneaky Queen Card](assets/research/cards/sneaky-queen.svg)

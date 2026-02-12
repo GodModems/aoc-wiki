@@ -8,8 +8,8 @@ window.WIKI_NAV = [
     section: "Getting Started",
     items: [
       { title: "Welcome", path: "welcome", tags: ["overview", "rules", "start"] },
+      { title: "How to Play", path: "chess", tags: ["terms", "definitions", "rules", "guide"] },
       { title: "FAQ", path: "faq", tags: ["help", "questions"] },
-      { title: "Glossary", path: "glossary", tags: ["terms", "definitions"] },
     ]
   },
   {
@@ -80,6 +80,13 @@ window.WIKI_NAV = [
       { title: "Tactical Retreat", path: "research/tactical-retreat", tags: ["research", "tactical-retreat"] },
       { title: "Transgression", path: "research/transgression", tags: ["research", "transgression"] },
     ]
-  }
-
+  },
+  {
+    section: "Patch Notes",
+    items: [
+      { title: "Current Patch Notes", path: "patch-notes/current", tags: ["patch", "patch notes", "notes"], hidden: true, isIndex: true},
+      // Add each civ as its own markdown page:
+      { title: "0.0.0", path: "patch-notes/0-0-0"}
+    ]
+  },
 ];

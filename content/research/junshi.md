@@ -1,11 +1,13 @@
 <!-- content/research/junshi.md -->
 # Junshi
 
-![Junshi Icon](assets/research/icons/junshi.svg)
-![Junshi Card](assets/research/cards/junshi.svg)
-
 ## Effect
-When a front-line pawn dies, friendly pawns behind it in the same file die in solidarity.
+When a [minor piece](#/pieces/index#minor) dies, friendly [minor pieces](#/pieces/index#minor) behind it in the same file die in solidarity.
 
-## Related
-- [Research Index](#/research/index)
+<br>
+---
+
+## Card
+
+
+![Junshi Card](assets/research/cards/junshi.svg)
