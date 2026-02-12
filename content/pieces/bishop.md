@@ -1,24 +1,31 @@
+<img class="float-right" src="assets/pieces/w/bishop.svg" alt="Bishop" loading="lazy" decoding="async">
+
 # Bishop
 
-The **Bishop** is a diagonal line piece. Unless modified by civilization/research, it follows standard bishop movement.
+The Bishop is classified as a [major piece](#/pieces/index#major) with the following properties:
 
-## Summary
 - **Moves:** any number of squares diagonally.
 - **Captures:** by landing on the target square.
-- **Jumping:** cannot jump over pieces.
+- **Jumping:** cannot jump over [pieces](#/pieces/index).
 
+<br>
+---
 
-## Common modifiers (research)
-- **[Manifest Destiny](#/research/manifest-destiny)**: bishops may move one square directly forward.
+## Research Modifiers
+**[Manifest Destiny](#/research/manifest-destiny):** Bishops may move one square directly forward.
+**[Inquisitors](#/research/inquisitors):** On capturing a [major piece](#/pieces/index#major), the bishop must immediately move again. 
+**[Transgression](#/research/transgression):** Landing diagonally adjacent to an enemy [piece](#/pieces/index) kills the bishop. 
+**[Missionaries](#/research/missionaries):** Bishops can teleport to any square its partner can move to, but can only capture on squares it could already move to. 
 
-- **Missionaries:** bishops can teleport to any square its partner can move to, but can only capture on squares it could already move to. :contentReference[oaicite:23]{index=23}
-- **Inquisitors:** on capturing a high-value piece (not a pawn or a ninja), the bishop must immediately move again. :contentReference[oaicite:24]{index=24}
+<br>
+---
 
-## Civilization interactions
-- **Mongols:** bishops are replaced by knights. :contentReference[oaicite:25]{index=25}
-- **Egyptians:** knights are replaced with bishops. :contentReference[oaicite:26]{index=26}
-- **Pharaoh scaling:** Pharaoh movement depends on your bishop count. :contentReference[oaicite:27]{index=27}
-
-## Asset placeholders
-- White: `assets/pieces/w/bishop.svg`
-- Black: `assets/pieces/b/bishop.svg`
+## Civilization Interactions
+**[Egyptians](#/civilizations/egyptians):** 
+- Your [knights](#/pieces/knight) are replaced with bishops. 
+**[French](#/civilizations/french):**
+- When your [King](#/pieces/king) dies, buff all other pieces for 3 turns. Your bishop gains [rook](#/pieces/rook) movement during this buff window.
+**[Huns](#/civilizations/huns):** 
+- Replace all [non-royal pieces](#/pieces/royals) with [horseman](#/pieces/horseman).
+**[Mongols](#/civilizations/mongols):** 
+- Your bishops are replaced by [knights](#/pieces/knight).

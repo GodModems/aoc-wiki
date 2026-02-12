@@ -1,24 +1,26 @@
+<img class="float-right" src="assets/pieces/w/rook.svg" alt="Rook" loading="lazy" decoding="async">
+
 # Rook
 
-The **Rook** is a long-range line piece. Unless modified by civilization/research, it follows standard rook movement.
+The Rook is classified as a [major piece](#/pieces/index#major) with the following properties:
 
-## Summary
-- **Moves:** any number of squares in straight lines (rank/file).
+- **Moves:** any number of squares horizontally or vertically.
 - **Captures:** by landing on the target square.
-- **Jumping:** cannot jump over pieces.
+- **Jumping:** cannot jump over [pieces](#/pieces/index).
 
-## Movement
-A Rook may move any number of empty squares:
-- horizontally (left/right), or
-- vertically (up/down).
+<br>
+---
 
-## Capturing
-A Rook captures by moving onto an enemy-occupied square along a valid rook line.
+## Research Modifiers
+**[Momentum](#/research/momentum):** rooks can teleport to any square its partner can move to if they are on the same rank or file. 
+**[Murder Holes](#/research/murder-holes):** rooks gain diagonal movement. 
+**[Pyrrhic Victory](#/research/pyrrhic-victory):** if a rook survives to the 50-move mark, its side instantly wins the game. 
 
-## Common modifiers (research)
-- **Momentum:** rooks can teleport to any square its partner can move to if they are on the same rank or file. :contentReference[oaicite:6]{index=6}
-- **Murder Holes:** rooks gain diagonal movement like a queen. :contentReference[oaicite:7]{index=7}
+<br>
+---
 
-## Asset placeholders
-- White: `assets/pieces/w/rook.svg`
-- Black: `assets/pieces/b/rook.svg`
+## Civilization Interactions
+**[French](#/civilizations/french):**
+- When your [King](#/pieces/king) dies, your rooks gain [bishop](#/pieces/bishop) movement for 3 turns. 
+**[Huns](#/civilizations/huns):** 
+- Replace all [non-royal pieces](#/pieces/royals) with [horseman](#/pieces/horseman).

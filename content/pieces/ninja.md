@@ -1,26 +1,31 @@
+<img class="float-right" src="assets/pieces/w/ninja.svg" alt="Ninja" loading="lazy" decoding="async">
+
 # Ninja
 
-The **Ninja** is a Pawn-variant used by some civilizations. It uses **normal pawn movement/capturing**, but has extra mobility and a special promotion turn. :contentReference[oaicite:8]{index=8}
+The Ninja is classified as a [minor piece](#/pieces/index#minor) with the following properties:
 
-## Summary
-- **Moves/Captures:** normal pawn rules. :contentReference[oaicite:9]{index=9}
-- **Jumping:** can jump over **enemy pawns**. :contentReference[oaicite:10]{index=10}
-- **Promotion:** on reaching the far rank, promote normally, then **immediately move again** (2 moves in 1 turn). :contentReference[oaicite:11]{index=11}
+- **Moves:** 1 square forward.
+- **Captures:** 1 square diagonally forward by landing on the target square.
+- **Jumping:** can jump over 1 [minor-piece](#/pieces/index#minor) directly in front of it.
 
-## Movement & Capturing
-Ninja movement/capture is the same as a Pawn in your ruleset. :contentReference[oaicite:12]{index=12}
+<br>
+---
 
-## Jumping enemy pawns
-When moving as a Ninja, it may jump over enemy pawns (exact jump conditions should match your core rules). :contentReference[oaicite:13]{index=13}
+## Research Modifiers
+**[Tactical Retreat](#/research/tactical-retreat):** [Minor pieces](#/pieces/index#minor) may move one square straight backward.
+**[Scorched Earth](#/research/scorched-earth):** Every 10th turn, one random [minor piece](#/pieces/index#minor) or [horseman](#/pieces/horseman) is removed from the board.
+**[Junshi](#/research/junshi):** When a [minor piece](#/pieces/index#minor) dies, any friendly [minor piece](#/pieces/index#minor) behind it in the same file dies in solidarity.
+**[Morganatic Marriage](#/research/morganatic-marriage):** [Minor pieces](#/pieces/index#minor) cannot be promoted into [queens](#/pieces/queen).
+**[Fletching](#/research/Fletching):** [Minor pieces](#/pieces/index#minor) do not move when capturing pieces. 
+**[Sneaky Queen](#/research/sneaky-queen):** One random [minor piece](#/pieces/index#minor) or [horseman](#/pieces/horseman) becomes a hidden [queen](#/pieces/queen), revealing after its first non-standard move.
+**[Blitzkrieg](#/research/blitzkrieg):** During the first three turns, the same [minor pieces](#/pieces/index#minor) must move twice each turn.
 
-## Promotion and extra move
-Upon reaching the far rank:
-1. Promote as a normal pawn would, then
-2. Immediately take another move (still during the same turn). :contentReference[oaicite:14]{index=14}
 
-## Used by
-- **Japanese:** all pawns are replaced by Ninjas. :contentReference[oaicite:15]{index=15}
+<br>
+---
 
-## Asset placeholders
-- White: `assets/pieces/w/ninja.svg`
-- Black: `assets/pieces/b/ninja.svg`
+## Civilization Interactions
+**[Japanese](#/civilizations/japanese):** 
+- All of your [pawns](#/pieces/pawn) are replaced with ninjas.
+
+

@@ -1,12 +1,11 @@
 # Civilizations
 
-Civilizations define your **starting board**, **unique mechanics**, and (optionally) **special rules** that shape how you play.
+Civilizations define your **starting board**, **unique mechanics**, and any **special rules** that shape how you play.
 
-## How to use this page
-- Click a civilization name to read its full rules.
-- Reference starting boards and unique mechanics before a match.
+<br>
+---
 
-## Civilizations (A–Z)
+## Civilizations
 - [Britons](#/civilizations/britons)
 - [Burgundians](#/civilizations/burgundians)
 - [Chinese](#/civilizations/chinese)
@@ -17,8 +16,10 @@ Civilizations define your **starting board**, **unique mechanics**, and (optiona
 - [Mongols](#/civilizations/mongols)
 - [Spanish](#/civilizations/spanish)
 - [Teutons](#/civilizations/teutons)
+- [Traditional](#/civilizations/traditional)
 - [Vikings](#/civilizations/vikings)
 
+<br>
 ---
 
 ## Emblems
@@ -62,6 +63,10 @@ Civilizations define your **starting board**, **unique mechanics**, and (optiona
 
   <a class="civ-emblem" href="#/civilizations/teutons" title="Teutons" aria-label="Teutons">
     <img src="assets/emblems/new/teutons.png" alt="Teutons emblem" loading="lazy" decoding="async">
+  </a>
+
+  <a class="civ-emblem" href="#/civilizations/traditional" title="Traditional" aria-label="Traditional">
+    <img src="assets/emblems/new/traditional.png" alt="Traditional emblem" loading="lazy" decoding="async">
   </a>
 
   <a class="civ-emblem" href="#/civilizations/vikings" title="Vikings" aria-label="Vikings">

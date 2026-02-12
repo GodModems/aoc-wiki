@@ -194,23 +194,79 @@
     return html;
   }
 
+function hrefToWikiPath(href) {
+  // Accept "#/pieces/pawn" and "#/rules/special#manifest-destiny"
+  // Return "pieces/pawn" or "rules/special" (base page path only)
+  if (!href) return null;
+  const s = String(href).trim();
+  if (!s.startsWith("#/")) return null;
 
-  function buildToc() {
+  // strip leading "#/"
+  const rest = s.slice(2);
+
+  // base path ends at next "#", or "?", or end
+  const cutHash = rest.indexOf("#");
+  const cutQ = rest.indexOf("?");
+  let end = rest.length;
+  if (cutHash !== -1) end = Math.min(end, cutHash);
+  if (cutQ !== -1) end = Math.min(end, cutQ);
+
+  const path = rest.slice(0, end).replace(/\/+$/, "");
+  return path || null;
+}
+
+function titleForWikiPath(path) {
+  const p = PAGES.find(x => x.path === path);
+  if (p && p.title) return p.title;
+
+  // Fallback: last segment -> Title Case
+  const slug = (path.split("/").pop() || path).trim();
+  return slug
+    .split("-")
+    .map(w => (w ? w[0].toUpperCase() + w.slice(1) : w))
+    .join(" ");
+}
+
+  function buildToc(currentPath) {
     elToc.innerHTML = "";
-    const headings = elContent.querySelectorAll("h2, h3");
-    if (!headings.length) {
+
+    const links = Array.from(elContent.querySelectorAll('a[href^="#/"]'));
+    const seen = new Set();
+    const tocItems = [];
+
+    for (const a of links) {
+      const href = a.getAttribute("href") || "";
+      const path = hrefToWikiPath(href);
+      if (!path) continue;
+
+      // optional: don’t include link to the page you're already on
+      if (currentPath && path === currentPath) continue;
+
+      if (seen.has(path)) continue;
+      seen.add(path);
+
+      tocItems.push({
+        href,                 // keep the FIRST href we saw for that page
+        title: titleForWikiPath(path),
+      });
+    }
+
+    if (!tocItems.length) {
       elTocWrap.style.display = "none";
       return;
     }
+
     elTocWrap.style.display = "";
-    for (const h of headings) {
+
+    for (const it of tocItems) {
       const a = document.createElement("a");
-      a.href = "#" + h.id;
-      a.textContent = h.textContent || "";
-      a.style.marginLeft = h.tagName === "H3" ? "10px" : "0";
+      a.href = it.href;
+      a.textContent = it.title;
       elToc.appendChild(a);
     }
   }
+
+
 
   function getSectionLandingPath(sectionName) {
     const sec = NAV.find(s => s.section === sectionName);
@@ -531,8 +587,10 @@
 
   function getRoutePath() {
     const h = (location.hash || "#/welcome").replace(/^#\/?/, "");
-    return h.length ? h : "welcome";
+    const pathOnly = h.split("#")[0];
+    return pathOnly.length ? pathOnly : "welcome";
   }
+
 
   async function loadPage(path) {
     const page =
@@ -561,7 +619,8 @@
     const title = (elContent.querySelector("h1")?.textContent || page.title).trim();
     document.title = `${title} • Age of Chesspires Wiki`;
 
-    buildToc();
+    buildToc(page.path);
+;
   }
 
   // Search (titles + tags)

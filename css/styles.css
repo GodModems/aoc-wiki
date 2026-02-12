@@ -6,9 +6,10 @@
   --muted: #b7bbc2;
   --border: #e3c558;
   --accent: #e3c558;
-  --accent2: #22c55e;
-  --danger: #ef4444;
+  --accent2: #ffffff;
   --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --refLink: #e3c558;
+  --refLinkHover: #ffffff;
 
   --sidebarW: 290px;
   --tocW: 5px;
@@ -19,13 +20,18 @@
 }
 
 html[data-theme="light"]{
-  --bg: #f8fafc;
-  --panel: #ffffff;
-  --panel2: #f1f5f9;
-  --text: #0f172a;
-  --muted: #475569;
-  --border: rgba(15,23,42,.14);
-  --shadow: 0 10px 30px rgba(2,6,23,.12);
+  --bg: #f2e6cf;
+  --panel: #fff9ef;
+  --panel2: #f6e9d2;
+  --text: #251c13;
+  --muted: #6b5f51;
+  --border: #8f691d;
+  --accent: #9c7422;
+  --accent2: #251c13;
+  --shadow: 0 10px 30px rgba(0,0,0,.13);
+  --refLink: #463300;
+  --refLinkHover: #0a0603;
+
 }
 
 *{ box-sizing: border-box; }
@@ -142,6 +148,7 @@ code, pre{ font-family: var(--mono); }
 }
 .nav__title{
   font-size: 16px;
+  font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--border);
@@ -154,6 +161,7 @@ code, pre{ font-family: var(--mono); }
   padding: 8px 10px;
   border-radius: 5px;
   border: 1px solid transparent;
+  font-weight: 400;
 }
 .nav__link:hover{ background: color-mix(in srgb, var(--accent) 10%, transparent); }
 .nav__link.active{
@@ -303,6 +311,11 @@ code, pre{ font-family: var(--mono); }
   gap: 1em;
   align-items: start;
 }
+
+.contentwrap p{
+  padding-left: 1em;
+  max-width: 80%;
+}
 .content{
   background: var(--panel);
   border: 5px solid var(--border);
@@ -426,7 +439,7 @@ code, pre{ font-family: var(--mono); }
   display: grid;
   place-items: center;
   padding: 5px;
-  border: 1px solid var(--border);
+
   background: var(--panel2);
   border-radius: 5%;
   text-decoration: none;
@@ -501,6 +514,34 @@ code, pre{ font-family: var(--mono); }
   object-fit: contain;
 }
 
+/* Internal wiki page references (from .md): href starts with "#/" */
+#content a[href^="#/"],
+#toc a[href^="#/"],
+#content a[href^="#/"]:visited,
+#toc a[href^="#/"]:visited{
+  color: var(--refLink) !important;
+  text-decoration: none;
+}
+
+#content a[href^="#/"]:hover,
+#toc a[href^="#/"]:hover{
+  color: var(--refLinkHover, var(--refLink)) !important;
+  text-decoration: underline;
+}
+
+/* Float an image to the top-right so text wraps around it */
+.float-right{
+  float: right;
+  max-width: 10%;      /* adjust per taste */
+  width: 40%;
+  margin: 0 0 2em 3em; /* top right bottom left */
+  background: var(--panel2);
+}
+
+/* Clear helper if you want to force content below the float later */
+.clear{
+  clear: both;
+}
 
 
 @media (max-width: 1050px){

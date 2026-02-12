@@ -1,16 +1,20 @@
+<img class="float-right" src="assets/emblems/new/burgundians.png" alt="Burgundians emblem" loading="lazy" decoding="async">
 
 # Burgundians
+The Burgundians draw from the late medieval Duchy of Burgundy, a wealthy and politically sharp realm perched between France and the Holy Roman Empire. Driven by ambitious dukes and enriched by thriving Flemish cities, Burgundy became famous for courtly splendor, hard bargaining, and battlefield power—often rivaling kings while navigating the perilous game of European politics.
 
-## Rules
-- Upon reaching the **6th or 7th rank**, your pawns may optionally be **promoted into a Knight**.
-- Your Knights can also move **1 square**:
-  - left, right, forward, and backward (in addition to normal Knight movement).
-
+<br>
 ---
 
+## Rules
+Upon reaching the **6th** or **7th** (for black: **3rd** or **2nd**) rank, your [pawns](#/pieces/pawn) **may** be promoted into a [knight](#/pieces/knight).
+Your [Knights](#/pieces/knight) gain 1 square of movement in the:
+- left, right, forward, and backward.
+
+<br>
+---
 
 ## Starting Board
-White starting half (ranks **4 → 1**):
 
 ```board
 . . . . . . . .

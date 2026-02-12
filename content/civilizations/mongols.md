@@ -1,17 +1,17 @@
+<img class="float-right" src="assets/emblems/new/mongols.png" alt="Mongols emblem" loading="lazy" decoding="async">
 
 # Mongols
 
 ## Rules
-- If your pawns capture a **non-pawn** piece, they are promoted to a **Knight**.
-- All of your Bishops are replaced by **Knights**.
-- Your Knights can move **1 square diagonally** (in addition to normal Knight movement).
+If your [pawns](#/pieces/pawn) capture a [non-minor piece](#/pieces/index#minor), they are promoted to a [Knight](#/pieces/knight).
+All of your [Bishops](#/pieces/bishop) are replaced by [Knights](#/pieces/knight).
+Your [Knights](#/pieces/knight) gain 1 square of movement in the:
+- forward-left, forward-right, back-left, and back-right diagonals.
 
 ---
 
 
 ## Starting Board
-White starting half (ranks **4 → 1**):
-
 ```board
 . . . . . . . .
 . . . . . . . .

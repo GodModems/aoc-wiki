@@ -1,25 +1,31 @@
+<img class="float-right" src="assets/pieces/w/pharaoh.svg" alt="Pharaoh" loading="lazy" decoding="async">
+
 # Pharaoh
 
-The **Pharaoh** is a royal replacement whose movement depends on your **bishop count** and cannot jump. :contentReference[oaicite:44]{index=44}
+The Pharaoh is a classified as a [royal piece](#/pieces/index#royals) with the following properties:
 
-## Summary
-- **Jumping:** cannot jump over pieces. :contentReference[oaicite:45]{index=45}
-- **Movement scaling:** depends on your bishop count. :contentReference[oaicite:46]{index=46}
+- **Moves:** movement range depends on your **bishop count** (see below).
+- **Captures:** by landing on the target square.
+- **Jumping:** cannot jump over [pieces](#/pieces/index).
 
-## Movement (based on bishop count)
-- **4 bishops:** +2 in all directions. :contentReference[oaicite:47]{index=47}
-- **2–3 bishops:** +2 diagonal only. :contentReference[oaicite:48]{index=48}
-- **0–1 bishop:** normal King movement. :contentReference[oaicite:49]{index=49}
+## Bishop-count movement
+- **4 bishops:** move up to **2** squares in any direction .  
+- **2–3 bishops:** move up to **2** squares diagonally, but only **1** square orthogonally. 
+- **0–1 bishop:** **1** square any direction. 
 
-Interpretation for play (recommended wording):
-- When you have a “+2” condition active, the Pharaoh may move **up to 2 squares** in the allowed directions, but is blocked by intervening pieces (no jumping). :contentReference[oaicite:50]{index=50}
+<br>
+---
 
-## Capturing
-Captures by moving onto the target square using the same movement rules (and still cannot jump). :contentReference[oaicite:51]{index=51}
+## Research Modifiers
+**[Feudalism](#/research/feudalism):** [Royals](#/pieces/index#royals) may move 2 squares forward instead of only one.
+**[Castle 2](#/research/castle-2):** [Royals](#/pieces/index#royals) may swap places with any friendly [piece](#/pieces/index) once per game. {index=4}  
+**[Noble Sacrifice](#/research/noble-sacrifice):** When checked by exactly one [piece](#/pieces/index), sacrifice all [minor pieces](#/pieces/index#minor) to destroy that attacker. 
 
-## Used by
-- **Egyptians:** King is replaced with a Pharaoh. :contentReference[oaicite:52]{index=52}
+<br>
+---
 
-## Asset placeholders
-- White: `assets/pieces/w/pharaoh.svg`
-- Black: `assets/pieces/b/pharaoh.svg`
+## Civilization Interactions
+**[Egyptians](#/civilizations/egyptians):** 
+- Your [King](#/pieces/king) is replaced with a Pharaoh.  
+
+

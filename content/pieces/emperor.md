@@ -1,20 +1,28 @@
+<img class="float-right" src="assets/pieces/w/emperor.svg" alt="Emperor" loading="lazy" decoding="async">
+
 # Emperor
 
-The **Emperor** is a royal replacement used by some civilizations. Its movement is **normal King movement**. :contentReference[oaicite:39]{index=39}
+The **Emperor** is classified as a [royal piece](#/pieces/royals) with the following properties:
 
-## Summary
-- **Moves/Captures:** normal King movement. :contentReference[oaicite:40]{index=40}
-- **Role:** may replace the King depending on civilization rules. :contentReference[oaicite:41]{index=41}
+- **Moves:** 1 square in any direction.
+- **Captures:** by landing on the target square.
+- **Jumping:** cannot jump over [pieces](#/pieces/index).
 
-## Movement
-Normal King movement. :contentReference[oaicite:42]{index=42}
+<br>
+---
 
-## Capturing
-Normal King capturing (adjacent capture).
+## Research Modifiers
 
-## Civilization rules (example)
-- **Chinese:** King is replaced with an Emperor; if the Emperor dies and you have 2+ pawns, convert a pawn into a new Emperor; you lose when you have no Emperor. :contentReference[oaicite:43]{index=43}
+**[Feudalism](#/research/feudalism):** [Royals](#/pieces/index#royals) may move 2 squares forward instead of only one.
+**[Castle 2](#/research/castle-2):** [Royals](#/pieces/index#royals) may swap places with any friendly [piece](#/pieces/index) once per game. 
+**[Noble Sacrifice](#/research/noble-sacrifice):** When checked by exactly one [piece](#/pieces/index), sacrifice all [minor pieces](#/pieces/index#minor) to capture it.
 
-## Asset placeholders
-- White: `assets/pieces/w/emperor.svg`
-- Black: `assets/pieces/b/emperor.svg`
+<br>
+---
+
+## Civilization Interactions
+**[Chinese](#/civilizations/chinese):** 
+- [King](#/pieces/king) is replaced with an Emperor;
+- If the Emperor dies, and 2 or more [pawns](#/pieces/pawn) remain, promote a [pawn](#/pieces/pawn) into an Emperor.
+
+

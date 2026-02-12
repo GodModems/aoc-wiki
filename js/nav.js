@@ -16,15 +16,16 @@ window.WIKI_NAV = [
     section: "Pieces",
     items: [
       { title: "Pieces Index", path: "pieces/index", tags: ["pieces", "index"], hidden: true, isIndex: true},
-      { title: "Bishop", path: "pieces/bishop", tags: ["piece", "bishop"] },
-      { title: "Emperor", path: "pieces/emperor", tags: ["piece", "emperor"] },
-      { title: "Horseman", path: "pieces/horseman", tags: ["piece", "horseman"] },
-      { title: "King", path: "pieces/king", tags: ["piece", "king"] },
-      { title: "Knight", path: "pieces/knight", tags: ["piece", "knight"] },
-      { title: "Ninja", path: "pieces/ninja", tags: ["piece", "ninja"] },
       { title: "Pawn", path: "pieces/pawn", tags: ["piece", "pawn"] },
-      { title: "Pharaoh", path: "pieces/pharaoh", tags: ["piece", "pharaoh"] },
+      { title: "Bishop", path: "pieces/bishop", tags: ["piece", "bishop"] },
+      { title: "Knight", path: "pieces/knight", tags: ["piece", "knight"] },
+      { title: "Rook", path: "pieces/rook", tags: ["piece", "rook"] },
       { title: "Queen", path: "pieces/queen", tags: ["piece", "queen"] },
+      { title: "King", path: "pieces/king", tags: ["piece", "king"] },
+      { title: "Emperor", path: "pieces/emperor", tags: ["piece", "emperor"] },
+      { title: "Pharaoh", path: "pieces/pharaoh", tags: ["piece", "pharaoh"] },
+      { title: "Horseman", path: "pieces/horseman", tags: ["piece", "horseman"] },
+      { title: "Ninja", path: "pieces/ninja", tags: ["piece", "ninja"] },
     ]
   },
   {

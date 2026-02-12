@@ -1,20 +1,26 @@
+<img class="float-right" src="assets/pieces/w/horseman.svg" alt="Horseman" loading="lazy" decoding="async">
+
 # Horseman
 
-The **Horseman** is a high-mobility piece with a split move/capture profile: it **moves 2 squares** but **captures only 1 square away**. :contentReference[oaicite:16]{index=16}
+The Horseman is classified as a [major piece](#/pieces/index#major) with the following properties:
 
-## Summary
-- **Move:** 2 spaces in any direction; may jump over units. :contentReference[oaicite:17]{index=17}
-- **Capture:** can only capture units 1 space away. :contentReference[oaicite:18]{index=18}
+- **Moves:** any space in a 2 square radius.
+- **Captures:** by landing on the target square so long as its within a 1 square radius.
+- **Jumping:** can jump over [pieces](#/pieces/index).
 
-## Movement
-A Horseman can move **2 squares** in any direction (orthogonal or diagonal). It **may jump over units** while moving. :contentReference[oaicite:19]{index=19}
+<br>
+---
 
-## Capturing
-A Horseman can only capture units **1 square away** (adjacent). :contentReference[oaicite:20]{index=20}
+## Research Modifiers
+**[Scorched Earth](#/research/scorched-earth):** Every 10th turn, one random [minor piece](#/pieces/index#minor) or horseman is removed from the board.
+**[Sneaky Queen](#/research/sneaky-queen):** One random [minor piece](#/pieces/index#minor) or horseman becomes a hidden [queen](#/pieces/queen), revealing after its first non-standard move.
 
-## Used by
-- **Huns:** all non-king pieces are replaced by 12 Horsemen. :contentReference[oaicite:21]{index=21}
+<br>
+---
 
-## Asset placeholders
-- White: `assets/pieces/white/horseman.svg`
-- Black: `assets/pieces/black/horseman.svg`
+## Civilization Interactions
+**[Huns](#/civilizations/huns):** 
+- all [non-royal pieces](#/pieces/index#royals) are replaced with horseman.
+
+
+
