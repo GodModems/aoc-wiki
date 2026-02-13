@@ -11,11 +11,11 @@
   --refLink: #e3c558;
   --refLinkHover: #ffffff;
   --h1: #b99c30;
-  --h2: #e3c558; /* gold */
-  --h3: #e9d184; /* lighter gold */
-  --h4: #f3e4b2; /* muted */
-  --h5: #9aa0aa; /* dimmer */
-  --h6: #7f8792; /* dimmest */
+  --h2: #e3c558; 
+  --h3: #e9d184; 
+  --h4: #f3e4b2; 
+  --h5: #9aa0aa; 
+  --h6: #7f8792; 
   --bold: #ffffff;
 
   --boardCell: 52px;
@@ -43,14 +43,14 @@ html[data-theme="light"]{
   --accent: #9c7422;
   --accent2: #251c13;
   --shadow: 0 10px 30px rgba(0,0,0,.13);
-  --refLink: #e60707;
-  --refLinkHover: #830606;
-  --h1: #251c13; /* ink */
-  --h2: #8f691d; /* border gold */
-  --h3: #9c7422; /* accent gold */
-  --h4: #6b5f51; /* muted */
-  --h5: #54493d; /* darker muted */
-  --h6: #3b322a; /* darkest muted */
+  --refLink: #b85832;
+  --refLinkHover: #683517;
+  --h1: #251c13; 
+  --h2: #8f691d;
+  --h3: #9c7422; 
+  --h4: #6b5f51; 
+  --h5: #54493d; 
+  --h6: #3b322a; 
   --bold: #110d09;
 
   --boardLight: color-mix(in srgb, var(--panel2) 0%, #f2e6cf);
@@ -557,6 +557,121 @@ code, pre{ font-family: var(--mono); }
   clear: both;
 }
 
+.emote-search{
+  width: 40%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--panel2);
+  color: var(--text);
+  margin: 10px 0 12px 0;
+}
+
+
+.emote-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.emote-tile{
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--panel2);
+  border-radius: 14px;
+  padding: 10px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.emote-tile:hover{ filter: brightness(1.06); }
+
+.emote-tile img{
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Modal */
+.emote-modal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.80);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 18px;
+}
+
+.emote-modal.open{ display: flex; }
+
+.emote-modal__card{
+  position: relative;
+  background: var(--panel);
+  border: 5px solid var(--border);
+  border-radius: 7px;
+  box-shadow: var(--shadow);
+  max-width: min(520px, 95vw);
+  max-height: min(520px, 95vw);
+  padding: 14px;
+}
+
+.emote-modal__title{
+  margin: 0 0 10px 0;
+  color: var(--text);
+  font-weight: 1000;
+  font-size: large
+}
+
+.emote-modal__img{
+  width: min(420px, 80vw);
+  height: min(420px, 60vh);
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  padding: 1em;
+  background: var(--panel2);
+  border-radius: 14px;
+  border: 2px solid var(--border);
+}
+
+.emote-modal__close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 2px solid var(--border);
+  background: var(--panel2);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.emote-modal__nav{
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 0.5em;
+  height: 1em;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: var(--panel2);
+  color: var(--text);
+  cursor: pointer;
+  display: grid;
+  place-items: center stretch;
+  font-size: 3em;
+  line-height: 2px;
+}
+
+.emote-modal__prev{ left: -10%; }
+.emote-modal__next{ right: -10%; }
+
+.emote-modal__nav:hover{ filter: brightness(1.06); }
 
 @media (max-width: 1050px){
   .contentwrap{ grid-template-columns: 1fr; }

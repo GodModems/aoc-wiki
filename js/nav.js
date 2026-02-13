@@ -82,6 +82,12 @@ window.WIKI_NAV = [
     ]
   },
   {
+    section: "Cosmetics",
+    items: [
+      { title: "Emotes", path: "cosmetics/emotes", tags: ["emotes", "cosmetics", "social"] },
+    ]
+  },
+  {
     section: "Patch Notes",
     items: [
       { title: "Current Patch Notes", path: "patch-notes/current", tags: ["patch", "patch notes", "notes"], hidden: true, isIndex: true},

@@ -666,6 +666,7 @@ function titleForWikiPath(path) {
 
     enhanceBoardBlocks();
     applyHeadingPaddingToBlocks();
+    enhanceEmoteGrid();
 
     const title = (elContent.querySelector("h1")?.textContent || page.title).trim();
     document.title = `${title} • Age of Chesspires Wiki`;
@@ -713,4 +714,187 @@ function titleForWikiPath(path) {
   // Initial load + route changes
   window.addEventListener("hashchange", () => loadPage(getRoutePath()));
   loadPage(getRoutePath());
+
+  function titleCaseFromFilename(file) {
+  const base = String(file).split("/").pop().replace(/\.[^.]+$/, "");
+  return base
+    .replace(/[_-]+/g, " ")
+    .trim()
+    .split(" ")
+    .map(w => (w ? w[0].toUpperCase() + w.slice(1) : w))
+    .join(" ");
+}
+
+function ensureEmoteModal() {
+  let modal = document.getElementById("emoteModal");
+  if (modal) return modal;
+
+  modal = document.createElement("div");
+  modal.id = "emoteModal";
+  modal.className = "emote-modal";
+  modal.innerHTML = `
+    <div class="emote-modal__card" role="dialog" aria-modal="true">
+      <button class="emote-modal__close" type="button" aria-label="Close">Close</button>
+
+      <button class="emote-modal__nav emote-modal__prev" type="button" aria-label="Previous emote">‹</button>
+      <button class="emote-modal__nav emote-modal__next" type="button" aria-label="Next emote">›</button>
+
+      <div class="emote-modal__title" id="emoteModalTitle"></div>
+      <img class="emote-modal__img" id="emoteModalImg" alt="">
+    </div>
+  `;
+
+
+  document.body.appendChild(modal);
+
+  const closeBtn = modal.querySelector(".emote-modal__close");
+  const card = modal.querySelector(".emote-modal__card");
+
+  function close() {
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
+    const img = modal.querySelector("#emoteModalImg");
+    // Reset src so GIF restarts next open
+    img.src = "";
+  }
+
+  closeBtn.addEventListener("click", close);
+  modal.addEventListener("click", (e) => {
+    if (!card.contains(e.target)) close();
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("open")) close();
+  });
+
+  modal._close = close;
+  return modal;
+}
+
+async function enhanceEmoteGrid() {
+  const grid = elContent.querySelector("[data-emote-grid]");
+  if (!grid) return;
+
+  const searchBox = elContent.querySelector("[data-emote-search]");
+  if (searchBox) searchBox.value = "";
+
+  grid.innerHTML = `<p style="color: var(--muted);">Loading emotes…</p>`;
+
+  let emotes = [];
+  try {
+    const res = await fetch("assets/emotes/manifest.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+
+    if (Array.isArray(data)) {
+      // backwards compatibility: ["a.gif", ...]
+      emotes = data
+        .filter(f => typeof f === "string" && f.toLowerCase().endsWith(".gif"))
+        .map(f => ({ file: f, name: titleCaseFromFilename(f), tags: [] }));
+    } else {
+      const list = (data && Array.isArray(data.emotes)) ? data.emotes : [];
+      emotes = list
+        .filter(e => e && typeof e.file === "string" && e.file.toLowerCase().endsWith(".gif"))
+        .map(e => ({
+          file: e.file,
+          name: (e.name && String(e.name).trim()) ? String(e.name).trim() : titleCaseFromFilename(e.file),
+          tags: Array.isArray(e.tags) ? e.tags.map(t => String(t).trim()).filter(Boolean) : []
+        }));
+    }
+  } catch (e) {
+    grid.innerHTML = `<p style="color: var(--muted);">Could not load emotes. Ensure <code>assets/emotes/manifest.json</code> exists.</p>`;
+    return;
+  }
+
+  // default sort by name
+  emotes.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }));
+
+  const modal = ensureEmoteModal();
+  const modalTitle = modal.querySelector("#emoteModalTitle");
+  const modalImg = modal.querySelector("#emoteModalImg");
+  const btnPrev = modal.querySelector(".emote-modal__prev");
+  const btnNext = modal.querySelector(".emote-modal__next");
+
+  let visible = emotes.slice();   // filtered view
+  let currentIndex = -1;          // index within visible
+
+  function renderGrid(list) {
+    grid.innerHTML = "";
+    list.forEach((e, idx) => {
+      const src = `assets/emotes/${e.file}`;
+
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "emote-tile";
+      btn.title = e.name;
+      btn.setAttribute("aria-label", e.name);
+      btn.dataset.idx = String(idx);
+
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = e.name;
+      img.loading = "lazy";
+      img.decoding = "async";
+
+      btn.appendChild(img);
+      grid.appendChild(btn);
+    });
+  }
+
+  function openAt(idx) {
+    if (!visible.length) return;
+    currentIndex = (idx + visible.length) % visible.length;
+
+    const e = visible[currentIndex];
+    const src = `assets/emotes/${e.file}`;
+
+    modalTitle.textContent = e.name;
+    modalImg.alt = e.name;
+
+    modalImg.src = "";
+    modalImg.src = src;
+
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  btnPrev.addEventListener("click", () => openAt(currentIndex - 1));
+  btnNext.addEventListener("click", () => openAt(currentIndex + 1));
+
+  window.addEventListener("keydown", (e) => {
+    if (!modal.classList.contains("open")) return;
+    if (e.key === "ArrowLeft") openAt(currentIndex - 1);
+    if (e.key === "ArrowRight") openAt(currentIndex + 1);
+  });
+
+  renderGrid(visible);
+
+  grid.addEventListener("click", (ev) => {
+    const btn = ev.target.closest("button.emote-tile");
+    if (!btn) return;
+    openAt(parseInt(btn.dataset.idx, 10));
+  });
+
+  if (searchBox) {
+    searchBox.addEventListener("input", () => {
+      const q = searchBox.value.trim().toLowerCase();
+
+      visible = !q
+        ? emotes.slice()
+        : emotes.filter(e => {
+            const hay = (e.name + " " + (e.tags || []).join(" ")).toLowerCase();
+            return hay.includes(q);
+          });
+
+      // keep name sort
+      visible.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }));
+
+      currentIndex = -1;
+      renderGrid(visible);
+    });
+  }
+}
+
+
+
 })();
